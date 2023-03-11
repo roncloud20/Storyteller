@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+/* Search Bar */
+header > .searchBar {
+    display: flex;
+}
+
+/* Navigation Bar */
+header > nav > ul {
+    display: flex;
+    gap: 20px;
+}
+
+header > nav > ul > li {
+    list-style: none;
+}
+
+header > nav > ul > li > a{
+    text-decoration: none;
+}
