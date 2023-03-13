@@ -1,6 +1,33 @@
 <?php
     //Adding the header file
-    require_once 'header.html';
+    $title = "User Registration";
+    require_once 'header.php'; 
+?>
+
+<h1>User Registration</h1>
+<form method="post" action="register.php">
+    <label for="firstname">Firstname:</label>
+    <input type="text" name="firstname" required><br><br>
+
+    <label for="lastname">Lastname:</label>
+    <input type="text" name="lastname" required><br><br>
+
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required><br><br>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" required><br><br>
+
+    <input type="submit" value="Register">
+</form>
+<?php
+    
     // Start session
     session_start();
 
@@ -54,30 +81,3 @@
     mysqli_close($conn);
 }
 ?>
-
-  <title>User Registration</title>
-
-  <h1>User Registration</h1>
-  <form method="post" action="register.php">
-    <label for="firstname">Firstname:</label>
-    <input type="text" name="firstname" required><br><br>
-
-    <label for="lastname">Lastname:</label>
-    <input type="text" name="lastname" required><br><br>
-    
-    <label for="username">Username:</label>
-    <input type="text" name="username" required><br><br>
-    
-    <label for="email">Email:</label>
-    <input type="email" name="email" required><br><br>
-    
-    <label for="password">Password:</label>
-    <input type="password" name="password" required><br><br>
-    
-    <label for="confirm_password">Confirm Password:</label>
-    <input type="password" name="confirm_password" required><br><br>
-    
-    <input type="submit" value="Register">
-  </form>
-</body>
-</html>
