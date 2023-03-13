@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storyteller Website</title>
-    <link rel="stylesheet" href="style.css"/>
+    <?php echo "<title>" .$title ."</title>" ?>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <header>
@@ -16,12 +16,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Categories</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Sign In/Up</a></li>
+                <li><a href="register.php">Sign In/Up</a></li>
             </ul>
         </nav>
     </header>
-</body>
-</html>
