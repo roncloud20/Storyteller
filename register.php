@@ -1,7 +1,7 @@
 <?php
     //Adding the header file
     $title = "User Registration";
-    require_once 'header.php'; 
+    require_once 'assets/header.php'; 
 ?>
 
 <h1>User Registration</h1>
@@ -25,6 +25,7 @@
     <input type="password" name="confirm_password" required><br><br>
 
     <input type="submit" value="Register">
+    <p>Already have an account? click <a href="login.php">here</a> to login</p>
 </form>
 <?php
     
@@ -40,7 +41,7 @@
     // Check if the registration form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Connect to MySQL database
-    require_once 'db_connect.php';
+    require_once 'assets/db_connect.php';
 
     // Get form input values
     $firstname = $_POST["firstname"];
