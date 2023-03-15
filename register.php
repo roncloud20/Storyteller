@@ -32,11 +32,11 @@
     // Start session
     session_start();
 
-    // Check if user is already logged in
-    if (isset($_SESSION["user_id"])) {
-    header("Location: index.php");
-    exit;
-    }
+    // // Check if user is already logged in
+    // if (isset($_SESSION["user_id"])) {
+    // header("Location: index.php");
+    // exit;
+    // }
 
     // Check if the registration form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -72,7 +72,7 @@
     $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname','$lastname','$username', '$email', '$hashed_password')";
     if (mysqli_query($conn, $sql)) {
         // Redirect to login page
-        header("Location: index.php");
+        header("Location: login.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
