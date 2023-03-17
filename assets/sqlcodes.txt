@@ -22,3 +22,22 @@ CREATE TABLE stories (
   updated_at DATETIME NOT NULL,
   published_at DATETIME
 )
+
+-- Please change the stories database to the following
+-- Drop the formal stories database
+DROP TABLE stories;
+
+-- Create this database
+CREATE TABLE stories (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  category VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  content_html TEXT,
+  image VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  published_at DATETIME DEFAULT NULL,
+  PRIMARY KEY (id)
+);
