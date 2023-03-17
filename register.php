@@ -32,33 +32,34 @@
     // Start session
     session_start();
 
-    // // Check if user is already logged in
-    // if (isset($_SESSION["user_id"])) {
-    // header("Location: index.php");
-    // exit;
-    // }
+    // Check if user is already logged in
+    if (isset($_SESSION["user_id"])) {
+        header("Location: index.php");
+        exit;
+    }
 
     // Check if the registration form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Connect to MySQL database
-    require_once 'assets/db_connect.php';
+        
+        // Connect to MySQL database
+        require_once 'assets/db_connect.php';
 
-    // Get form input values
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $confirm_password = $_POST["confirm_password"];
+        // Get form input values
+        $firstname = $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $username = $_POST["username"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $confirm_password = $_POST["confirm_password"];
 
-    // Validate form data
-    if ($password != $confirm_password) {
-        echo "Error: Passwords do not match";
-        exit();
-    } else {
-        // Hash password
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    }
+        // Validate form data
+        if ($password != $confirm_password) {
+            echo "Error: Passwords do not match";
+            exit();
+        } else {
+            // Hash password
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        }
 
     // Check if email already exists
     $sql = "SELECT * FROM users WHERE email='$email'";
