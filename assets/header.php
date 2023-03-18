@@ -18,6 +18,15 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">Categories</a></li>
+                <li><a href="create_story.php">Create Story</a></li>
+                <?php
+                // // Check if user is already logged in
+                if (isset($_SESSION["user_id"])) {
+                    echo("<li><a href='#'>Create Story</a></li>");
+                    exit;
+                }
+            
+                ?>
                 <li><a href="#">About Us</a></li>
                 <li><a href="register.php">Sign In/Up</a></li>
             </ul>
